@@ -6,18 +6,37 @@ public class KiemTraNamNhuan {
         System.out.println("Enter a year: ");
         int year;
         year = sc.nextInt();
-        if (year%4==0){
-            if (year%100==0){
-                if (year%400==0){
-                    System.out.println(year+" is a leap Year");
-                }else {
-                    System.out.println(year+" is not leap Year");
+//        if (year%4==0){
+//            if (year%100==0){
+//                if (year%400==0){
+//                    System.out.println(year+" is a leap Year");
+//                }else {
+//                    System.out.println(year+" is not leap Year");
+//                }
+//            }else {
+//                System.out.println(year+" is a leap Year");
+//            }
+//        }else {
+//            System.out.println(year+" is not leap Year");
+//        }
+
+        boolean isLeapYear = false;
+        boolean isDivisibleBy4 = year % 4 == 0;
+        if (isDivisibleBy4) {
+            boolean isDivisibleBy100 = year % 100 == 0;
+            if (isDivisibleBy100) {
+                boolean isDivisibleBy400 = year % 400 == 0;
+                if (isDivisibleBy400) {
+                    isLeapYear = true;
                 }
-            }else {
-                System.out.println(year+" is a leap Year");
+            } else {
+                isLeapYear = true;
             }
-        }else {
-            System.out.println(year+" is not leap Year");
+        }
+        if (isLeapYear) {
+            System.out.println(year + " is a leap Year");
+        } else {
+            System.out.println(year + " is not a leap Year");
         }
     }
 }
